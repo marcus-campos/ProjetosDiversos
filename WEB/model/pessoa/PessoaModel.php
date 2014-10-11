@@ -1,0 +1,174 @@
+<?php 
+	require_once '../controller/dbcontrol/db.inc.php';
+	
+	class PessoaModel 
+	{ 	
+		/* REGION GETTERS E SETTERS */ 
+		private $idpessoa = null;
+		private $nome = null;
+		private $sobrenome = null;
+		private $telefone = null;
+		private $celular = null;
+		private $rg = null;
+		private $cpf = null;
+		private $cnpj = null;
+		private $dataNasc = null;
+		private $ultimoUpdate = null;
+		private $status = null;
+		private $usuariosIduser = null;
+		private $tipoPessoaIdtipoPessoa = null;
+		private $pessoaIdpessoa = null;
+		
+		//---------------------------------------------------------------------------
+		public function getIdpessoa(){
+			return $this->idpessoa;
+		}
+	
+		public function setIdpessoa($idpessoa){
+			$this->idpessoa = $idpessoa;
+		}
+		//---------------------------------------------------------------------------
+		public function getNome(){
+			return $this->nome;
+		}
+	
+		public function setNome($nome){
+			$this->nome = $nome;
+		}
+		//---------------------------------------------------------------------------
+		public function getSobrenome(){
+			return $this->sobrenome;
+		}
+	
+		public function setSobrenome($sobrenome){
+			$this->sobrenome = $sobrenome;
+		}
+		//---------------------------------------------------------------------------
+		public function getTelefone(){
+			return $this->telefone;
+		}
+	
+		public function setTelefone($telefone){
+			$this->telefone = $telefone;
+		}
+		//---------------------------------------------------------------------------
+		public function getCelular(){
+			return $this->celular;
+		}
+	
+		public function setCelular($celular){
+			$this->celular = $celular;
+		}
+		//---------------------------------------------------------------------------
+		public function getRg(){
+			return $this->rg;
+		}
+	
+		public function setRg($rg){
+			$this->rg = $rg;
+		}
+		//---------------------------------------------------------------------------
+		public function getCpf(){
+			return $this->cpf;
+		}
+	
+		public function setCpf($cpf){
+			$this->cpf = $cpf;
+		}
+		//---------------------------------------------------------------------------
+		public function getCnpj(){
+			return $this->cnpj;
+		}
+	
+		public function setCnpj($cnpj){
+			$this->cnpj = $cnpj;
+		}
+		//---------------------------------------------------------------------------
+		public function getDataNasc(){
+			return $this->dataNasc;
+		}
+	
+		public function setDataNasc($dataNasc){
+			$this->dataNasc = $dataNasc;
+		}
+		//---------------------------------------------------------------------------
+		public function getUltimoUpdate(){
+			return $this->ultimoUpdate;
+		}
+	
+		public function setUltimoUpdate($ultimoUpdate){
+			$this->ultimoUpdate = $ultimoUpdate;
+		}
+		//---------------------------------------------------------------------------
+		public function getStatus(){
+			return $this->status;
+		}
+	
+		public function setStatus($status){
+			$this->status = $status;
+		}
+		//---------------------------------------------------------------------------
+		public function getUsuariosIduser(){
+			return $this->usuariosIduser;
+		}
+	
+		public function setUsuariosIduser($usuariosIduser){
+			$this->usuariosIduser = $usuariosIduser;
+		}
+		//---------------------------------------------------------------------------
+		public function getTipoPessoaIdtipoPessoa(){
+			return $this->tipoPessoaIdtipoPessoa;
+		}
+	
+		public function setTipoPessoaIdtipoPessoa($tipoPessoaIdtipoPessoa){
+			$this->tipoPessoaIdtipoPessoa = $tipoPessoaIdtipoPessoa;
+		}
+		//---------------------------------------------------------------------------
+		public function getPessoaIdpessoa(){
+			return $this->pessoaIdpessoa;
+		}
+	
+		public function setPessoaIdpessoa($pessoaIdpessoa){
+			$this->pessoaIdpessoa = $pessoaIdpessoa;
+		}
+		
+		//---------------------------------------------------------------------------
+		/* ENDREGION GETTERS E SETTERS */		
+		//---------------------------------------------------------------------------
+		/* REGION SAVE */
+		public function save() 
+		{ 
+			// logica para salvar cliente no banco 
+		} 
+		/* ENDREGION SAVE */
+		//---------------------------------------------------------------------------
+		/* REGION UPDATE */
+		//---------------------------------------------------------------------------
+		public function update() 
+		{ 
+			// logica para atualizar cliente no banco 
+		} 
+		/* ENDREGION UPDATE */
+		//---------------------------------------------------------------------------
+		/* REGION REMOVE */
+		//---------------------------------------------------------------------------
+		public function remove() 
+		{ 
+			// logica para remover cliente do banco 
+		}
+		
+		/* ENDREGION REMOVE */	
+		//---------------------------------------------------------------------------		
+		/* REGION SELECT */
+		
+		//---------------------------------------------------------------------------
+		function loadTipoAndIdPessoa()		
+		{		
+			$mysqlObj = new MySQLDB();
+			$sql = "SELECT p.idpessoa, p.nome, p.sobrenome, p.status, tp.titulo, tp.dashboard FROM pessoas P
+					INNER JOIN	tipo_pessoa tp ON p.tipo_pessoa_idtipo_pessoa = tp.p.idtipo_pessoa";			
+			return $mysqlObj->query($sql);		
+		}		
+		/* ENDREGION SELECT */
+	} 
+?>

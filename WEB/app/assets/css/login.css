@@ -1,0 +1,40 @@
+body{
+	background-image: url('../media/images/bg.png');
+	background-repeat: repeat;
+	background-color: #311F00;
+}
+#container{
+	width: 955px;
+	height: 700px;
+	margin: 0 auto;
+	position: relative;
+		
+}
+
+#formulario{
+	width: 490px;
+	margin-left: -230px;
+	margin-top: -320px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+
+.logo{
+	text-align: center;
+}
+
+
+
+#rodape{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	margin: 0 auto;
+	font-size: 16px;
+	color: white;
+	
+	height: 20px;
+	text-align: center;
+	left: 0px;
+}
