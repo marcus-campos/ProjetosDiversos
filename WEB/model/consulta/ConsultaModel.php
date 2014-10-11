@@ -6,12 +6,15 @@
 		private $idconsulta = null;
 		private $usuariosIduser = null;
 		private $naturezaConsultaIdnaturezaConsulta = null;
+		private $assunto = null;
 		private $descricao = null;
 		private $prioridadeConsultaIdprioridadeConsulta = null;
+		private $colaboradorConsulta = null;
 		private $dataConsulta = null;
 		private $entregaConsulta = null;
 		private $etapa = null;
 	
+		//---------------------------------------------------------------------------
 		public function getIdconsulta(){
 			return $this->idconsulta;
 		}
@@ -19,7 +22,7 @@
 		public function setIdconsulta($idconsulta){
 			$this->idconsulta = $idconsulta;
 		}
-	
+		//---------------------------------------------------------------------------
 		public function getUsuariosIduser(){
 			return $this->usuariosIduser;
 		}
@@ -27,7 +30,7 @@
 		public function setUsuariosIduser($usuariosIduser){
 			$this->usuariosIduser = $usuariosIduser;
 		}
-	
+		//---------------------------------------------------------------------------
 		public function getNaturezaConsultaIdnaturezaConsulta(){
 			return $this->naturezaConsultaIdnaturezaConsulta;
 		}
@@ -35,7 +38,15 @@
 		public function setNaturezaConsultaIdnaturezaConsulta($naturezaConsultaIdnaturezaConsulta){
 			$this->naturezaConsultaIdnaturezaConsulta = $naturezaConsultaIdnaturezaConsulta;
 		}
+		//---------------------------------------------------------------------------
+		public function getAssunto(){
+			return $this->assunto;
+		}
 	
+		public function setAssunto($assunto){
+			$this->assunto = $assunto;
+		}
+		//---------------------------------------------------------------------------
 		public function getDescricao(){
 			return $this->descricao;
 		}
@@ -43,7 +54,7 @@
 		public function setDescricao($descricao){
 			$this->descricao = $descricao;
 		}
-	
+		//---------------------------------------------------------------------------
 		public function getPrioridadeConsultaIdprioridadeConsulta(){
 			return $this->prioridadeConsultaIdprioridadeConsulta;
 		}
@@ -51,7 +62,15 @@
 		public function setPrioridadeConsultaIdprioridadeConsulta($prioridadeConsultaIdprioridadeConsulta){
 			$this->prioridadeConsultaIdprioridadeConsulta = $prioridadeConsultaIdprioridadeConsulta;
 		}
+		//---------------------------------------------------------------------------
+		public function getColaboradorConsulta(){
+			return $this->colaboradorConsulta;
+		}
 	
+		public function setColaboradorConsulta($colaboradorConsulta){
+			$this->colaboradorConsulta = $colaboradorConsulta;
+		}
+		//---------------------------------------------------------------------------
 		public function getDataConsulta(){
 			return $this->dataConsulta;
 		}
@@ -59,7 +78,7 @@
 		public function setDataConsulta($dataConsulta){
 			$this->dataConsulta = $dataConsulta;
 		}
-	
+		//---------------------------------------------------------------------------
 		public function getEntregaConsulta(){
 			return $this->entregaConsulta;
 		}
@@ -67,7 +86,7 @@
 		public function setEntregaConsulta($entregaConsulta){
 			$this->entregaConsulta = $entregaConsulta;
 		}
-	
+		//---------------------------------------------------------------------------
 		public function getEtapa(){
 			return $this->etapa;
 		}
@@ -75,8 +94,7 @@
 		public function setEtapa($etapa){
 			$this->etapa = $etapa;
 		}
-
-
+	
 		//---------------------------------------------------------------------------
 		/* ENDREGION GETTERS E SETTERS */		
 		//---------------------------------------------------------------------------
