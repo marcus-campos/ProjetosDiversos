@@ -74,7 +74,9 @@ if ($pageName == "maps-vector.php") {
     scripttag("assets/plugins/form-jasnyupload/fileinput.min.js");               // File Input \n ";
     scripttag("assets/plugins/form-tokenfield/bootstrap-tokenfield.min.js");     // Tokenfield \n ";
     scripttag("assets/demo/demo-formcomponents.js");
-} elseif ($pageName == "form-ckeditor.php") {
+}else if($pageName == "consulta.php"){
+	scripttag("assets/plugins/form-jasnyupload/fileinput.min.js"); 
+}elseif ($pageName == "form-ckeditor.php") {
     scripttag("assets/plugins/form-ckeditor/ckeditor.js");                       // WYSIWYG CKEditor \n ";
 } elseif ($pageName == "form-xeditable.php") {
     scripttag("assets/plugins/form-daterangepicker/moment.min.js");

@@ -1,5 +1,5 @@
 <?php 
-	require_once '../model/dashboard/consulta/NaturezaModel.php';	
+	require_once '../model/consulta/NaturezaModel.php';	
 	
 	class NaturezaController 
 	{ 
@@ -7,8 +7,8 @@
 		{ 	
 			$natureza = new NaturezaModel();
 			$naturezas = $natureza->loadNaturezaConsulta(); 
-			$_REQUEST['nconsultas'] = $naturezas;
-			require_once '../view/dashboard/consulta/NaturezaView.php'; 
+			$_REQUEST['naturezas'] = $naturezas;
+			require_once '../view/consulta/NaturezaView.php'; 
 		} 
 	} 
 ?>

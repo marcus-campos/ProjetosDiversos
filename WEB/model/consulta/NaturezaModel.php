@@ -1,5 +1,5 @@
 <?php 
-	require_once '../dashboard/controller/dbcontrol/db.inc.php';
+	require_once '../controller/dbcontrol/db.inc.php';
 	
 	class NaturezaModel 
 	{ 	

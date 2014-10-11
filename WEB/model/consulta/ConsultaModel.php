@@ -101,8 +101,17 @@
 		/* REGION SAVE */
 		public function save() 
 		{ 
-			// logica para salvar cliente no banco 
-		} 	
+			require_once '../controller/dbcontrol/db.inc.php';	
+			$mysqlObj = new MySQLDB();
+			$usuariosIduser = $this->getUsuariosIduser();	
+			$assunto = $this->getAssunto();
+			$naturezaConsultaIdnaturezaConsulta = $this->getNaturezaConsultaIdnaturezaConsulta();
+			$descricao = $this->getDescricao();
+			$sql = "INSERT INTO consulta(usuarios_iduser,natureza_consulta_idnatureza_consulta,assunto,descricao,data_consulta,etapa) VALUES($usuariosIduser,$naturezaConsultaIdnaturezaConsulta,'$assunto','$descricao',sysdate(),'1')";	
+			$mysqlObj->query($sql);
+			$idConsulta = $mysqlObj->last_id();			
+			return $idConsulta;
+		} 
 		
 		/* ENDREGION SAVE */
 		//---------------------------------------------------------------------------
@@ -134,12 +143,7 @@
 		/* REGION SELECT */
 		
 		//---------------------------------------------------------------------------
-		function loadNaturezaConsulta()		
-		{		
-			$mysqlObj = new MySQLDB();
-			$sql = "SELECT * FROM natureza_consulta nome ORDER BY natureza";			
-			return $mysqlObj->query($sql);		
-		}	
+	
 		//---------------------------------------------------------------------------
 		function loadConsultasADefinir()		
 		{		
