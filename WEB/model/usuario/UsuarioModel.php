@@ -1,5 +1,6 @@
 <?php 
-	require_once 'controller/dbcontrol/db.inc.php';
+	// require_once '../controller/dbcontrol/db.inc.php';
+	// require_once '../lib/sanitize.php';
 	
 	class UsuarioModel 
 	{ 	
@@ -7,8 +8,7 @@
 		private $iduser = null;
 		private $login = null;
 		private $senha = null;
-		private $nome = null;
-		private $sobreNome = null;
+		private $apelido = null;
 		private $email = null;
 		private $level = null;
 		private $ultimoUpdate = null;
@@ -40,20 +40,12 @@
 			$this->senha = $senha;
 		}
 		//---------------------------------------------------------------------------
-		public function getNome(){
-			return $this->nome;
+		public function getApelido(){
+			return $this->apelido;
 		}
 	
-		public function setNome($nome){
-			$this->nome = $nome;
-		}
-		//---------------------------------------------------------------------------
-		public function getSobreNome(){
-			return $this->sobreNome;
-		}
-	
-		public function setSobreNome($sobreNome){
-			$this->sobreNome = $sobreNome;
+		public function setApelido($apelido){
+			$this->apelido = $apelido;
 		}
 		//---------------------------------------------------------------------------
 		public function getEmail(){
@@ -68,7 +60,7 @@
 			return $this->level;
 		}
 	
-		public function setLevel($email){
+		public function setLevel($level){
 			$this->level = $level;
 		}
 		//---------------------------------------------------------------------------
@@ -101,7 +93,17 @@
 		/* REGION SAVE */
 		public function save() 
 		{ 
-			// logica para salvar cliente no banco 
+			$mysqlObj = new MySQLDB();
+			$login = $this->getLogin();
+			$email = $this->getEmail();
+			$senha = md5($this->getSenha());
+			$apelido = $this->getApelido();
+			$status = $this->getStatus();
+			$level = $this->getLevel();
+			$sql = "INSERT INTO usuarios(login,senha,apelido,email,status,level,ultimo_update) VALUES('$login','$email','$senha','$apelido', '$status', $level, sysdate())";
+			$mysqlObj->query($sql);
+			$id = $mysqlObj->last_id();
+			return $id;
 		} 
 		/* ENDREGION SAVE */
 		//---------------------------------------------------------------------------
@@ -131,6 +133,13 @@
 			$password = $this->getSenha();	
 			$password = md5($password);
 			$sql = "SELECT * FROM usuarios WHERE login = '$login' AND senha = '$password'";			
+			return $mysqlObj->query($sql);		
+		}
+
+		function all()		
+		{	
+			$mysqlObj = new MySQLDB();
+			$sql = "SELECT * FROM usuarios";			
 			return $mysqlObj->query($sql);		
 		}	
 		/* ENDREGION SELECT */
