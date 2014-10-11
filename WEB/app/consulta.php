@@ -2,9 +2,13 @@
 	include "header.php";
 	require_once "../controller/consulta/NaturezaController.php";
 	require_once "../controller/consulta/ConsultaController.php";
+	require_once "../controller/consulta/AnexoController.php";
+	require_once "../controller/consulta/consultaHasAnexoController.php";
 	$userLogin = $_SESSION['login'];
 	$consulta = new ConsultaController();
-	
+	$anexo = new AnexoController();
+	$consultaHasAnexoController = new consultaHasAnexoController();
+ 	
 	/*if(isset($_POST['btncadastrar']))
 	{
 		$usuario = new UsuarioController();
@@ -78,6 +82,14 @@
 		}
 		
 		}
+		$_REQUEST['nomeArquivo'] = $nome_final;
+		$_REQUEST['caminhoArquivo'] = $_UP['pasta'] . $nome_final;
+		$idAnexo = $anexo ->save();
+		$_REQUEST['idAnexo'] = $idAnexo;
+		$_REQUEST['idConsulta'] = $idConsulta;
+		$consultaHasAnexoController ->save();
+
+		
 	}
 
 ?>
