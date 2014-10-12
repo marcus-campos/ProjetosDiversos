@@ -237,6 +237,12 @@
                         <li><a href="lista-usuarios.php">Todos</a></li>
                     </ul>
                 </li>
+                <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Consulta</span></a>
+                    <ul class="acc-menu">
+                        <li><a href="cadastro-usuarios.php">Cadastro</a></li>
+                        <li><a href="lista-usuarios.php">Todos</a></li>
+                    </ul>
+                </li>
             </ul>
             <!-- END SIDEBAR MENU -->
         </nav>
