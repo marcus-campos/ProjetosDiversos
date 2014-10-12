@@ -1,16 +1,13 @@
 <?php
   include "header.php";
   require_once '../controller/usuario/UsuarioController.php';
+  $breadcumb = ['lista-usuarios.php' => 'Usuários', 'cadastro-usuarios.php' => 'Cadastro'];
 ?>
 
 <div id="page-content">
 <div id='wrap'>
   <div id="page-heading">
-    <ol class="breadcrumb">
-      <li><a href="index.htm">Dashboard</a></li>
-      <li>Advanced Forms</li>
-      <li class="active">Wizards</li>
-    </ol>
+    <?php include 'breadcumb.php' ?>
     <h1>Usuários</h1>
     <!-- <div class="options">
       <div class="btn-toolbar">

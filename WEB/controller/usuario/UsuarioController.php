@@ -2,9 +2,7 @@
 
   if($_POST && $_POST['btn_submit']){
     $controller = new UsuarioController;
-    if($controller->cadastrar()){
-      $salvo = true;
-    }
+    $salvo = $controller->cadastrar();
   }
 
 	class UsuarioController 
@@ -54,11 +52,7 @@
       $usuario->setApelido($_POST['apelido']);
       $usuario->setLevel(0);
       $usuario->setStatus('1');
-      if($usuario->save()){
-        echo "Usuário cadastrado com sucesso!";
-      }else{
-        echo "Erro ao cadastrar Usuário";
-      }
+      return $usuario->save();
     }
 		//---------------------------------------------------------------------------
 		public function logar() 
