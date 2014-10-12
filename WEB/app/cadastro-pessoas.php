@@ -85,9 +85,9 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="fd_data_nasc" class="col-sm-3 control-label">Data de nascimento</label>
+                <label class="col-sm-3 control-label">Data de nascimento</label>
                 <div class="col-sm-6">
-                  <input name="data_nasc" type="date" class="form-control" id="fd_data_nasc">
+                  <input type="text" name="data_nasc" class="form-control" id="datepicker">
                 </div>
               </div>
             </form>
@@ -112,3 +112,9 @@
 </div>
 
 <?php include "footer.php" ?>
+
+<script>
+$(document).ready(function() {
+  $('#datepicker').datepicker();
+});
+</script>

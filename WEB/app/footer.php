@@ -33,6 +33,7 @@
 <script type='text/javascript' src='<?php echo asset("assets/js/application.js") ?>'></script> 
 <script type='text/javascript' src='<?php echo asset("assets/demo/demo.js") ?>'></script> 
 <script type='text/javascript' src='<?php echo asset("assets/plugins/form-jasnyupload/fileinput.min.js") ?>'></script> 
+<script type='text/javascript' src='<?php echo asset("assets/plugins/form-datepicker/js/bootstrap-datepicker.js") ?>'></script>
 
 </body>
 </html>
