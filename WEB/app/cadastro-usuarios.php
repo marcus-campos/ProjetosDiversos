@@ -29,6 +29,13 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
+        <?php if(isset($salvo) && $salvo): ?>
+          <div class="alert alert-dismissable alert-success">
+            Cadastro realizado com sucesso
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+          </div>
+        <?php endif; ?>
+
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h4>Usuários</h4>

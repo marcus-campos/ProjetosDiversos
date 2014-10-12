@@ -136,6 +136,20 @@
 			return $mysqlObj->query($sql);		
 		}
 
+		function enable()		
+		{	
+			$mysqlObj = new MySQLDB();
+			$sql = "UPDATE  `henrrique`.`usuarios` SET  `status` =  '1' WHERE  `usuarios`.`iduser` = " . $this->getIduser();			
+			return $mysqlObj->query($sql);		
+		}
+
+		function disable()		
+		{	
+			$mysqlObj = new MySQLDB();
+			$sql = "UPDATE  `henrrique`.`usuarios` SET  `status` =  '0' WHERE  `usuarios`.`iduser` = " . $this->getIduser();
+			return $mysqlObj->query($sql);		
+		}
+
 		function all()		
 		{	
 			$mysqlObj = new MySQLDB();

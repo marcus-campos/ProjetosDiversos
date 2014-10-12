@@ -2,7 +2,9 @@
 
   if($_POST && $_POST['btn_submit']){
     $controller = new UsuarioController;
-    $controller->cadastrar();
+    if($controller->cadastrar()){
+      $salvo = true;
+    }
   }
 
 	class UsuarioController 
@@ -17,6 +19,30 @@
 
       return $usuarios->all();
 		} 		
+
+
+    public function enable(){
+      require_once '../model/usuario/UsuarioModel.php';
+      require_once '../controller/dbcontrol/db.inc.php';
+      require_once '../lib/sanitize.php';
+
+      $usuario = new UsuarioModel;
+      $usuario->setIduser($_GET['usuario']);
+
+      return $usuario->enable();
+    }
+
+    public function disable(){
+      require_once '../model/usuario/UsuarioModel.php';
+      require_once '../controller/dbcontrol/db.inc.php';
+      require_once '../lib/sanitize.php';
+
+      $usuario = new UsuarioModel;
+      $usuario->setIduser($_GET['usuario']);
+
+      return $usuario->disable();
+    }
+
     public function cadastrar(){
       require_once '../model/usuario/UsuarioModel.php';
       require_once '../controller/dbcontrol/db.inc.php';
