@@ -4,4 +4,4 @@
   $usuario = new UsuarioController;
   $usuario = $usuario->enable();
 
-  return header("Location: /app/lista-usuarios.php");
+  return header("Location: /projetosdiversos/WEB/app/lista-usuarios.php");
