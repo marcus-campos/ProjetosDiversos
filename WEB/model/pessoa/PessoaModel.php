@@ -147,8 +147,10 @@
       $cpf = $this->getCpf();
       $cnpj = $this->getCnpj();
       $data_nasc = $this->getDataNasc();
+      $tipo_pessoa_idtipo_pessoa = $this->getTipoPessoaIdtipoPessoa();
+      $usuarios_iduser = $this->getUsuariosIduser();
 
-			$sql = "INSERT INTO pessoas(nome, sobrenome, telefone, celular, rg, cpf, cnpj, data_nasc,ultimo_update, status) VALUES('$nome', '$sobrenome', '$telefone', '$celular', '$rg', '$cpf', '$cnpj', '$data_nasc', sysdate(), '1')";
+			$sql = "INSERT INTO pessoas(nome, sobrenome, telefone, celular, rg, cpf, cnpj, data_nasc,ultimo_update, status, tipo_pessoa_idtipo_pessoa, usuarios_iduser) VALUES('$nome', '$sobrenome', '$telefone', '$celular', '$rg', '$cpf', '$cnpj', '$data_nasc', sysdate(), '1', $tipo_pessoa_idtipo_pessoa, $usuarios_iduser)";
 			$mysqlObj->query($sql);
 			$id = $mysqlObj->last_id();
 			return $id;

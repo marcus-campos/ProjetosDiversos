@@ -1,6 +1,11 @@
 <?php
   include "header.php";
+  require_once '../controller/dbcontrol/db.inc.php';
   require_once '../controller/pessoa/PessoaController.php';
+  require_once '../controller/pessoa/TipoPessoaController.php';
+  $tipo_pessoas_ctrl = new TipoPessoaController;
+  $mysqlObj = new MySQLDB();
+  $tipo_pessoas = $tipo_pessoas_ctrl->listar();
   $breadcumb = ['lista-pessoas.php' => 'Pessoas', 'cadastro-pessoas.php' => 'Cadastro'];
 ?>
 
@@ -41,7 +46,7 @@
             <h3>NOVO</h3>
             <br>
             <form class="form-horizontal" id="usuario-form" method="post">
-              <input name="btn_submit" type="hidden" value="true" class="form-control" id="fd_login">
+              <input name="btn_submit_pessoa" type="hidden" value="true" class="form-control" id="fd_login">
               <div class="form-group">
                 <label for="fd_nome" class="col-sm-3 control-label">Nome</label>
                 <div class="col-sm-6">
@@ -88,6 +93,17 @@
                 <label class="col-sm-3 control-label">Data de nascimento</label>
                 <div class="col-sm-6">
                   <input type="text" name="data_nasc" class="form-control" id="datepicker">
+                </div>
+              </div>
+              <!-- tipo_pessoa_idtipo_pessoa -->
+              <div class="form-group">
+                <label for="fd_tipo_pessoa_idtipo_pessoa" class="col-sm-3 control-label">Tipo de Pessoa</label>
+                <div class="col-sm-6">
+                  <select name="tipo_pessoa_idtipo_pessoa" id="fd_tipo_pessoa_idtipo_pessoa" class="form-control">
+                    <?php while($row = $mysqlObj->fetch_array($tipo_pessoas)):?>
+                      <option value="<?=$row['idtipo_pessoa']?>"><?=$row['titulo']?></option>
+                    <?php endwhile;?>
+                  </select>
                 </div>
               </div>
             </form>
