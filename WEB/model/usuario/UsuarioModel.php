@@ -100,7 +100,7 @@
 			$apelido = $this->getApelido();
 			$status = $this->getStatus();
 			$level = $this->getLevel();
-			$sql = "INSERT INTO usuarios(login,senha,apelido,email,status,level,ultimo_update) VALUES('$login','$email','$senha','$apelido', '$status', $level, sysdate())";
+			$sql = "INSERT INTO usuarios(login,email,senha,apelido,status,level,ultimo_update) VALUES('$login','$email','$senha','$apelido', '$status', $level, sysdate())";
 			$mysqlObj->query($sql);
 			$id = $mysqlObj->last_id();
 			return $id;
