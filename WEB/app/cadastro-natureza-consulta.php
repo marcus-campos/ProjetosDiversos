@@ -1,7 +1,7 @@
 <?php
   include "header.php";
   require_once '../controller/consulta/NaturezaController.php';
-  $breadcumb = ['lista-natureza-consulta.php' => 'Natureza das consultas', 'cadastro-natureza-consulta.php' => 'Cadastro'];
+  $breadcumb = [URL . 'lista-natureza-consulta.php' => 'Natureza das consultas', URL . 'cadastro-natureza-consulta.php' => 'Cadastro'];
 ?>
 
 <div id="page-content">

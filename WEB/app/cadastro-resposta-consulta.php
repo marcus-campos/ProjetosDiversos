@@ -1,7 +1,7 @@
 <?php
   include "header.php";
   require_once '../controller/consulta/RespostaConsultaController.php';
-  $breadcumb = ['lista-resposta-consulta.php' => 'Respostas das consultas', 'cadastro-resposta-consulta.php' => 'Cadastro'];
+  $breadcumb = [URL . 'lista-resposta-consulta.php' => 'Respostas das consultas', URL . 'cadastro-resposta-consulta.php' => 'Cadastro'];
 ?>
 
 <div id="page-content">

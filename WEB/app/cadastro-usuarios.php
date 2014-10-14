@@ -1,7 +1,7 @@
 <?php
   include "header.php";
   require_once '../controller/usuario/UsuarioController.php';
-  $breadcumb = ['lista-usuarios.php' => 'Usuários', 'cadastro-usuarios.php' => 'Cadastro'];
+  $breadcumb = [URL . 'lista-usuarios.php' => 'Usuários', URL . 'cadastro-usuarios.php' => 'Cadastro'];
 ?>
 
 <div id="page-content">
