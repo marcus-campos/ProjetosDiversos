@@ -17,7 +17,7 @@ class MySQLDB
 
       protected $login = 'root';
 
-      protected $password = '131313';
+      protected $password = '';
 
        function connect($host, $login, $password)
                 {

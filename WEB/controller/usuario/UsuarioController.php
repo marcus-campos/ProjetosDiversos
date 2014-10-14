@@ -1,6 +1,6 @@
 <?php
 
-  if($_POST && $_POST['btn_submit']){
+  if(isset($_POST['btn_submit']) && $_POST['btn_submit']){
     $controller = new UsuarioController;
     $salvo = $controller->cadastrar();
   }
