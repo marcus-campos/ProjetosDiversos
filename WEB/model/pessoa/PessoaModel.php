@@ -138,7 +138,20 @@
 		/* REGION SAVE */
 		public function save() 
 		{ 
-			// logica para salvar cliente no banco 
+			$mysqlObj = new MySQLDB();
+      $nome = $this->getNome();
+      $sobrenome = $this->getSobrenome();
+      $telefone = $this->getTelefone();
+      $celular = $this->getCelular();
+      $rg = $this->getRg();
+      $cpf = $this->getCpf();
+      $cnpj = $this->getCnpj();
+      $data_nasc = $this->getDataNasc();
+
+			$sql = "INSERT INTO pessoas(nome, sobrenome, telefone, celular, rg, cpf, cnpj, data_nasc,ultimo_update, status) VALUES('$nome', '$sobrenome', '$telefone', '$celular', '$rg', '$cpf', '$cnpj', '$data_nasc', sysdate(), '1')";
+			$mysqlObj->query($sql);
+			$id = $mysqlObj->last_id();
+			return $id;
 		} 
 		/* ENDREGION SAVE */
 		//---------------------------------------------------------------------------
@@ -161,6 +174,13 @@
 		//---------------------------------------------------------------------------		
 		/* REGION SELECT */
 		
+
+		function all()		
+		{	
+			$mysqlObj = new MySQLDB();
+			$sql = "SELECT * FROM pessoas";			
+			return $mysqlObj->query($sql);		
+		}	
 		//---------------------------------------------------------------------------
 		function loadTipoAndIdPessoa()		
 		{		

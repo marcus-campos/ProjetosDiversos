@@ -1,19 +1,14 @@
 <?php
 include "header.php";
-require_once '../controller/usuario/UsuarioController.php';
-$controller = new UsuarioController;
-$usuarios = $controller->listar();
-$mysqlObj = new MySQLDB();
-$breadcumb = ['lista-usuarios.php' => 'Usuários'];
+$breadcumb = ['lista-prioridade-consulta.php' => 'Prioridades de consulta'];
 ?>
 
 <div id="page-content">
-<div id='wrap'>
-  <div id="page-heading">
-    <?php include 'breadcumb.php' ?>
-
-    <h1>Usuários</h1>
-  </div>
+  <div id='wrap'>
+    <div id="page-heading">
+      <?php include 'breadcumb.php' ?>
+      <h1>Prioridades de consulta</h1>
+    </div>
 
 
 <div class="container">
@@ -22,18 +17,18 @@ $breadcumb = ['lista-usuarios.php' => 'Usuários'];
 
     <div class="panel panel-sky">
       <div class="panel-heading">
-        Listagem dos Usuários
+        Listagem das Prioridades de consultas
       </div>
       <!-- /.panel-heading -->
       <div class="panel-body">
         <div class="">
-          <table class="table table-striped table-bordered table-hover datatables" id="dataTables-user">
+          <table class="table table-striped table-bordered table-hover datatables" id="dataTables-prioridades-consulta">
             <thead>
               <tr>
-                <th>Login</th>
-                <th>Apelido</th>
-                <th>Email</th>
-                <th>-</th>
+                <th>Título</th>
+                <th>Dias</th>
+                <th>Horas</th>
+                <th>Minutos</th>
                 <!-- <th>-</th> -->
               </tr>
             </thead>
@@ -80,28 +75,17 @@ $(document).ready(function() {
         "dom": "<'row'<'col-xs-6'l><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
         "pagingType": "bootstrap",
         "ajax": {
-          "url": '/app/usuarios_data.php',
+          "url": '/app/prioridade_consulta_data.php',
           "dataSrc": function(json){
             return json;
           }
         },
         "columns": [
-            { "data": "login" },
-            { "data": "apelido" },
-            { "data": "email" },
+            { "data": "titulo" },
+            { "data": "dias" },
+            { "data": "horas" },
+            { "data": "minutos" },
         ],
-        "columnDefs": [ {
-            "targets": 3,
-            "render": function(data, type, row){
-              return function(){
-                if(row['status'] && row['status'] == 1){
-                  return '<a href="/app/usuarios_desativar.php?usuario='+ row['iduser'] +'" class="btn btn-danger">Desativar</a>'
-                }else{
-                  return '<a href="/app/usuarios_ativar.php?usuario='+ row['iduser'] +'" class="btn btn-success">Ativar</a>'
-                }
-              }
-            }
-        } ],
         language: {
             url: "assets/i18n/datatables/Portuguese-Brasil.txt"
         }
