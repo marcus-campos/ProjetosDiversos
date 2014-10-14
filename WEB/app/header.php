@@ -231,6 +231,12 @@
                         <li><a href="lista-pessoas.php">Todos</a></li>
                     </ul>
                 </li>
+                <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Tipos de Pessoas</span></a>
+                    <ul class="acc-menu">
+                        <li><a href="cadastro-tipo-pessoa.php">Cadastro</a></li>
+                        <li><a href="lista-tipo-pessoa.php">Todos</a></li>
+                    </ul>
+                </li>
                 <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Usuários</span></a>
                     <ul class="acc-menu">
                         <li><a href="cadastro-usuarios.php">Cadastro</a></li>
