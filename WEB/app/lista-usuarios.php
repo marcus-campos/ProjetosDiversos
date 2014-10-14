@@ -80,7 +80,7 @@ $(document).ready(function() {
         "dom": "<'row'<'col-xs-6'l><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
         "pagingType": "bootstrap",
         "ajax": {
-          "url": '/projetosdiversos/WEB/app/usuarios_data.php',
+          "url": '<?php echo URL; ?>usuarios_data.php',
           "dataSrc": function(json){
             return json;
           }
@@ -95,9 +95,9 @@ $(document).ready(function() {
             "render": function(data, type, row){
               return function(){
                 if(row['status'] && row['status'] == 1){
-                  return '<a href="/projetosdiversos/WEB/app/usuarios_desativar.php?usuario='+ row['iduser'] +'" class="btn btn-danger">Desativar</a>'
+                  return '<a href="<?php echo URL; ?>usuarios_desativar.php?usuario='+ row['iduser'] +'" class="btn btn-danger">Desativar</a>'
                 }else{
-                  return '<a href="/projetosdiversos/WEB/app/usuarios_ativar.php?usuario='+ row['iduser'] +'" class="btn btn-success">Ativar</a>'
+                  return '<a href="<?php echo URL; ?>usuarios_ativar.php?usuario='+ row['iduser'] +'" class="btn btn-success">Ativar</a>'
                 }
               }
             }

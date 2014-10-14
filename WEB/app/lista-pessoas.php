@@ -74,7 +74,7 @@ $(document).ready(function() {
         "dom": "<'row'<'col-xs-6'l><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
         "pagingType": "bootstrap",
         "ajax": {
-          "url": '/app/pessoas_data.php',
+          "url": '<?php echo URL; ?>pessoas_data.php',
           "dataSrc": function(json){
             return json;
           }

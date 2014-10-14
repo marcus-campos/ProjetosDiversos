@@ -1,7 +1,7 @@
 <?php
   include "header.php";
   require_once '../controller/consulta/PrioridadeConsultaController.php';
-  $breadcumb = ['lista-prioridade-consulta.php' => 'Prioridades de consulta', 'cadastro-prioridade-consulta.php' => 'Cadastro'];
+  $breadcumb = [URL . 'lista-prioridade-consulta.php' => 'Prioridades de consulta', URL . 'cadastro-prioridade-consulta.php' => 'Cadastro'];
 ?>
 
 <div id="page-content">

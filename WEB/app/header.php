@@ -1,4 +1,5 @@
 <?php
+    require_once 'util.php';
 	session_start();
 	$sessao_expirada = true;
 	if(!(isset($_SESSION['iduser']) && isset($_SESSION['ultima_acao']) && isset($_SESSION['level']) && isset($_SESSION['status'])))

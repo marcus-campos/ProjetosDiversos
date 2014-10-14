@@ -1,7 +1,7 @@
 <?php
   include "header.php";
   require_once '../controller/pessoa/TipoPessoaController.php';
-  $breadcumb = ['lista-tipo-pessoa.php' => 'Tipos de Pessoas', 'cadastro-tipo-pessoa.php' => 'Cadastro'];
+  $breadcumb = [URL . 'lista-tipo-pessoa.php' => 'Tipos de Pessoas', URL . 'cadastro-tipo-pessoa.php' => 'Cadastro'];
 ?>
 
 <div id="page-content">

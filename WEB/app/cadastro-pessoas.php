@@ -6,7 +6,7 @@
   $tipo_pessoas_ctrl = new TipoPessoaController;
   $mysqlObj = new MySQLDB();
   $tipo_pessoas = $tipo_pessoas_ctrl->listar();
-  $breadcumb = ['lista-pessoas.php' => 'Pessoas', 'cadastro-pessoas.php' => 'Cadastro'];
+  $breadcumb = [URL . 'lista-pessoas.php' => 'Pessoas', URL . 'cadastro-pessoas.php' => 'Cadastro'];
 ?>
 
 <div id="page-content">

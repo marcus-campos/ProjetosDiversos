@@ -1,6 +1,6 @@
 <?php
 include "header.php";
-$breadcumb = ['lista-natureza-consulta.php' => 'Natureza das consultas'];
+$breadcumb = [URL . 'lista-natureza-consulta.php' => 'Natureza das consultas'];
 ?>
 
 <div id="page-content">
@@ -73,7 +73,7 @@ $(document).ready(function() {
         "dom": "<'row'<'col-xs-6'l><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
         "pagingType": "bootstrap",
         "ajax": {
-          "url": '/app/natureza_consulta_data.php',
+          "url": '<?php echo URL; ?>natureza_consulta_data.php',
           "dataSrc": function(json){
             return json;
           }
