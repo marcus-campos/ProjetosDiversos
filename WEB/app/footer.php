@@ -31,6 +31,7 @@
 <script type='text/javascript' src='<?php echo asset("assets/demo/demo-formwizard.js") ?>'></script> 
 <script type='text/javascript' src='<?php echo asset("assets/js/placeholdr.js") ?>'></script> 
 <script type='text/javascript' src='<?php echo asset("assets/js/application.js") ?>'></script> 
+<!-- INDEX - Dash -->
 <script type='text/javascript' src='<?php echo asset("assets/plugins/fullcalendar/fullcalendar.min.js") ?>'></script>
 <script type='text/javascript' src='<?php echo asset("assets/plugins/form-daterangepicker/daterangepicker.min.js") ?>'></script>
 <script type='text/javascript' src='<?php echo asset("assets/plugins/form-daterangepicker/moment.min.js") ?>'></script>
@@ -38,7 +39,7 @@
 <script type='text/javascript' src='<?php echo asset("assets/plugins/charts-flot/jquery.flot.resize.min.js") ?>'></script>
 <script type='text/javascript' src='<?php echo asset("assets/plugins/charts-flot/jquery.flot.orderBars.min.js") ?>'></script>
 <script type='text/javascript' src='<?php echo asset("assets/plugins/pulsate/jQuery.pulsate.min.js") ?>'></script>
-<script type='text/javascript' src='<?php echo asset("assets/demo/demo-index.js") ?>'></script>
+
 <script type='text/javascript' src='<?php echo asset("assets/demo/demo.js") ?>'></script> 
 <script type='text/javascript' src='<?php echo asset("assets/plugins/form-jasnyupload/fileinput.min.js") ?>'></script> 
 <script type='text/javascript' src='<?php echo asset("assets/plugins/form-datepicker/js/bootstrap-datepicker.js") ?>'></script>
