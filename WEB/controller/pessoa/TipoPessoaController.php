@@ -1,5 +1,5 @@
 <?php
-  if($_POST && $_POST['btn_submit']){
+  if($_POST && isset($_POST['btn_submit'])){
     $controller = new TipoPessoaController;
     $salvo = $controller->cadastrar();
   }

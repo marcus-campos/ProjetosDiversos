@@ -1,5 +1,5 @@
 <?php
-  if($_POST && $_POST['btn_submit']){
+  if($_POST && $_POST['btn_submit_pessoa']){
     $controller = new PessoaController;
     $salvo = $controller->cadastrar();
   }
@@ -29,7 +29,9 @@
       $pessoa->setRg($_POST['rg']);
       $pessoa->setCpf($_POST['cpf']);
       $pessoa->setCnpj($_POST['cnpj']);
-      $pessoa->setDataNasc($_POST['data_nasc']);
+      $pessoa->setDataNasc(date("Y-m-d", strtotime($_POST['data_nasc'])));
+      $pessoa->setUsuariosIduser($_SESSION['iduser']);
+      $pessoa->setTipoPessoaIdtipoPessoa($_POST['tipo_pessoa_idtipo_pessoa']);
       return $pessoa->save();
     }
   }
