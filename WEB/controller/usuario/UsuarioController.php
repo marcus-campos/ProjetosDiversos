@@ -73,6 +73,8 @@
 				$_SESSION['apelido'] = $row['apelido'];
 				$_SESSION['login'] = $row['login'];
 				$_SESSION['level'] = $row['level'];
+				$_SESSION['titulo'] = $row['titulo'];
+				$_SESSION['dashboard'] = $row['dashboard'];
 				$_SESSION['status'] = $row['status'];
 				
 				if($row['status'] == 1)

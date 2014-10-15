@@ -132,7 +132,7 @@
 			$login = $this->getLogin();
 			$password = $this->getSenha();	
 			$password = md5($password);
-			$sql = "SELECT * FROM usuarios WHERE login = '$login' AND senha = '$password'";			
+			$sql = "SELECT u.*, tp.titulo, tp.dashboard FROM usuarios u INNER JOIN pessoas p INNER JOIN tipo_pessoa tp ON tp.idtipo_pessoa = p.tipo_pessoa_idtipo_pessoa WHERE login = '$login' AND senha = '$password'";			
 			return $mysqlObj->query($sql);		
 		}
 

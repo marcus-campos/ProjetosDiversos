@@ -16,8 +16,11 @@
 		session_cache_expire(30);
 		session_cache_expire();	
 		
-		 $data1 = $_SESSION['ultima_acao'];
-		 $data2 = date("Y-m-d H:i:s");
+		$data1 = $_SESSION['ultima_acao'];
+		$data2 = date("Y-m-d H:i:s");
+		$dash = $_SESSION['dashboard'].".php";
+		
+		header("Location: ../app/$dash");
 	
 		if($data1 > $data2)
 		{
