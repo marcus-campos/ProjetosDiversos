@@ -4,29 +4,18 @@
   require_once '../controller/pessoa/PessoaController.php';
   require_once '../controller/pessoa/TipoPessoaController.php';
   $tipo_pessoas_ctrl = new TipoPessoaController;
+  $empresas_ctrl = new PessoaController;
   $mysqlObj = new MySQLDB();
   $tipo_pessoas = $tipo_pessoas_ctrl->listar();
-  $breadcumb = [URL . 'lista-empresa.php' => 'Pessoas', URL . 'cadastro-pessoas.php' => 'Cadastro'];
+  $empresas = $empresas_ctrl->listar_empresas();
+  $breadcumb = [URL . 'lista-empresa.php' => 'Empresas', URL . 'cadastro-empresas.php' => 'Cadastro'];
 ?>
 
 <div id="page-content">
 <div id='wrap'>
   <div id="page-heading">
     <?php include 'breadcumb.php' ?>
-    <h1>Pessoas</h1>
-    <!-- <div class="options">
-      <div class="btn-toolbar">
-        <div class="btn-group hidden-xs">
-          <a href='#' class="btn btn-default dropdown-toggle" data-toggle='dropdown'><i class="fa fa-cloud-download"></i><span class="hidden-sm"> Export as  </span><span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Text File (*.txt)</a></li>
-            <li><a href="#">Excel File (*.xlsx)</a></li>
-            <li><a href="#">PDF File (*.pdf)</a></li>
-          </ul>
-        </div>
-        <a href="#" class="btn btn-default"><i class="fa fa-cog"></i></a>
-      </div>
-    </div> -->
+    <h1>Empresas</h1>
   </div>
   <div class="container">
     <div class="row">
@@ -40,21 +29,21 @@
 
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h4>Pessoas</h4>
+            <h4>Empresas</h4>
           </div>
           <div class="panel-body">
             <h3>NOVO</h3>
             <br>
             <form class="form-horizontal" id="usuario-form" method="post">
-              <input name="btn_submit_pessoa" type="hidden" value="true" class="form-control" id="fd_login">
+              <input name="btn_submit_empresa" type="hidden" value="true" class="form-control" id="fd_login">
               <div class="form-group">
-                <label for="fd_nome" class="col-sm-3 control-label">Nome</label>
+                <label for="fd_nome" class="col-sm-3 control-label">Razão Social</label>
                 <div class="col-sm-6">
                   <input name="nome" type="text" class="form-control" id="fd_nome">
                 </div>
               </div>
               <div class="form-group">
-                <label for="fd_sobrenome" class="col-sm-3 control-label">Sobrenome</label>
+                <label for="fd_sobrenome" class="col-sm-3 control-label">Nome Fantasia</label>
                 <div class="col-sm-6">
                   <input name="sobrenome" type="text" class="form-control" id="fd_sobrenome">
                 </div>
@@ -72,36 +61,30 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="fd_rg" class="col-sm-3 control-label">RG</label>
-                <div class="col-sm-6">
-                  <input name="rg" type="text" class="form-control" id="fd_rg">
-                </div>
-              </div>  
-               <div class="form-group">
-                <label for="fd_cnpj" class="col-sm-3 control-label">CNPJ</label>
-                <div class="col-sm-6">
-                <input type="radio" id="inlineradio1" value="option1">
-                </div>
-              </div>           
-              <div class="form-group">
                 <label for="fd_cnpj" class="col-sm-3 control-label">CNPJ</label>
                 <div class="col-sm-6">
                   <input name="cnpj" type="text" class="form-control" id="fd_cnpj">
                 </div>
               </div>
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Data de nascimento</label>
-                <div class="col-sm-6">
-                  <input type="text" name="data_nasc" class="form-control" id="datepicker">
-                </div>
-              </div>
               <!-- tipo_pessoa_idtipo_pessoa -->
               <div class="form-group">
-                <label for="fd_tipo_pessoa_idtipo_pessoa" class="col-sm-3 control-label">Tipo de Pessoa</label>
+                <label for="fd_tipo_pessoa_idtipo_pessoa" class="col-sm-3 control-label">Tipo de Empresa</label>
                 <div class="col-sm-6">
                   <select name="tipo_pessoa_idtipo_pessoa" id="fd_tipo_pessoa_idtipo_pessoa" class="form-control">
                     <?php while($row = $mysqlObj->fetch_array($tipo_pessoas)):?>
                       <option value="<?=$row['idtipo_pessoa']?>"><?=$row['titulo']?></option>
+                    <?php endwhile;?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="fd_pessoas_idpessoa" class="col-sm-3 control-label">Empresa</label>
+                <div class="col-sm-6">
+                  <select name="pessoas_idpessoa" id="fd_pessoas_idpessoa" class="form-control">
+                    <option value="" selected>Não pertence a outra empresa</option>
+                    <?php while($row = $mysqlObj->fetch_array($empresas)):?>
+                      <option value="<?=$row['idpessoa']?>"><?=$row['nome']?></option>
                     <?php endwhile;?>
                   </select>
                 </div>
