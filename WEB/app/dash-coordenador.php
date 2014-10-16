@@ -14,8 +14,30 @@
 					<h4 class="modal-title">Novo Cadastro</h4>
 				</div>
 				<div class="modal-body">
+                
+                	
 					    
                 	 <form action="#" class="form-horizontal row-border" method="post">
+                     
+                     <div class="form-group">
+						<label class="col-sm-3 control-label">Assunto</label>
+						<div class="col-sm-6">
+							<input type="text" name="txtassunto" class="form-control" required="required">
+						</div>
+					</div>
+                      <div class="form-group">
+						<label class="col-sm-3 control-label">Caminho Anexo</label>
+						<div class="col-sm-6">
+							<input type="text" name="txtanexo" class="form-control" required="required">
+						</div>
+					</div>
+                    
+                    <div class="form-group">
+						<label class="col-sm-3 control-label">Descricao</label>
+						<div class="col-sm-6">
+							<textarea name="descricao" class="form-control" required="required"></textarea>
+						</div>
+					</div>
                     <div class="form-group">
 					<label class="col-sm-3 control-label">Pacotes</label>
 						<div class="col-sm-6">
