@@ -1,13 +1,13 @@
 <?php
 include "header.php";
-$breadcumb = ['lista-pessoas.php' => 'Pessoas'];
+$breadcumb = ['lista-empresas.php' => 'Empresas'];
 ?>
 
 <div id="page-content">
   <div id='wrap'>
     <div id="page-heading">
       <?php include 'breadcumb.php' ?>
-      <h1>Pessoas</h1>
+      <h1>Empresas</h1>
     </div>
 
 
@@ -17,7 +17,7 @@ $breadcumb = ['lista-pessoas.php' => 'Pessoas'];
 
     <div class="panel panel-sky">
       <div class="panel-heading">
-        Listagem das Pessoas
+        Listagem das Empresas
       </div>
       <!-- /.panel-heading -->
       <div class="panel-body">
@@ -25,8 +25,8 @@ $breadcumb = ['lista-pessoas.php' => 'Pessoas'];
           <table class="table table-striped table-bordered table-hover datatables" id="dataTables-pessoa">
             <thead>
               <tr>
-                <th>Nome</th>
-                <th>Sobrenome</th>
+                <th>Razão Social</th>
+                <th>Nome Fantasia</th>
                 <th>Telefone</th>
                 <!-- <th>-</th> -->
               </tr>
@@ -74,7 +74,7 @@ $(document).ready(function() {
         "dom": "<'row'<'col-xs-6'l><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
         "pagingType": "bootstrap",
         "ajax": {
-          "url": '<?php echo URL; ?>pessoas_data.php',
+          "url": '<?php echo URL; ?>empresas_data.php',
           "dataSrc": function(json){
             return json;
           }

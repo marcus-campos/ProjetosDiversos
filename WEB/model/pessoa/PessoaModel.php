@@ -148,13 +148,28 @@
       $cnpj = $this->getCnpj();
       $data_nasc = $this->getDataNasc();
       $tipo_pessoa_idtipo_pessoa = $this->getTipoPessoaIdtipoPessoa();
-      $usuarios_iduser = $this->getUsuariosIduser();
 
-			$sql = "INSERT INTO pessoas(nome, sobrenome, telefone, celular, rg, cpf, cnpj, data_nasc,ultimo_update, status, tipo_pessoa_idtipo_pessoa, usuarios_iduser) VALUES('$nome', '$sobrenome', '$telefone', '$celular', '$rg', '$cpf', '$cnpj', '$data_nasc', sysdate(), '1', $tipo_pessoa_idtipo_pessoa, $usuarios_iduser)";
+			$sql = "INSERT INTO pessoas(nome, sobrenome, telefone, celular, rg, cpf, cnpj, data_nasc,ultimo_update, status, tipo_pessoa_idtipo_pessoa) VALUES('$nome', '$sobrenome', '$telefone', '$celular', '$rg', '$cpf', '$cnpj', '$data_nasc', sysdate(), '1', $tipo_pessoa_idtipo_pessoa)";
 			$mysqlObj->query($sql);
 			$id = $mysqlObj->last_id();
 			return $id;
 		} 
+
+		public function save_empresa() 
+		{ 
+			$mysqlObj = new MySQLDB();
+      $nome = $this->getNome();
+      $sobrenome = $this->getSobrenome();
+      $telefone = $this->getTelefone();
+	    $celular = $this->getCelular();
+      $cnpj = $this->getCnpj();
+      $tipo_pessoa_idtipo_pessoa = $this->getTipoPessoaIdtipoPessoa();
+
+			$sql = "INSERT INTO pessoas(nome, sobrenome, telefone, celular, cnpj,ultimo_update, status, tipo_pessoa_idtipo_pessoa) VALUES('$nome', '$sobrenome', '$telefone', '$celular', '$cnpj', sysdate(), '1', $tipo_pessoa_idtipo_pessoa)";
+			$mysqlObj->query($sql);
+			$id = $mysqlObj->last_id();
+			return $id;
+		}
 		/* ENDREGION SAVE */
 		//---------------------------------------------------------------------------
 		/* REGION UPDATE */
@@ -176,6 +191,14 @@
 		//---------------------------------------------------------------------------		
 		/* REGION SELECT */
 		
+
+		# Apenas empresas que não são 'filhas' de nenhuma outra
+		function all_empresas(){
+			$mysqlObj = new MySQLDB();
+			# TODO: checar : colocar o NULL caso não seja setado o pessoas_idpessoa
+			$sql = "SELECT * FROM `pessoas` WHERE `idpessoa` = `pessoas_idpessoa`"; # `pessoas_idpessoa` IS NULL
+			return $mysqlObj->query($sql);
+		}
 
 		function all()		
 		{	
