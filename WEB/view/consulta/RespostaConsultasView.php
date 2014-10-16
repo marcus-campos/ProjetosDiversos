@@ -49,7 +49,7 @@
         	 <li>                                           
                 <div class="content">
                     <span class="time"><?=$row['data_consulta']?></span>
-                    <a href="#" class="title"><?=$row['assunto']?></a>
+                    <a href="?cons1=hue1" class="title"><?=$row['assunto']?></a>
                     <span class="thread">pergunta feita por <a href="#"><?=$row['nome']." ".$row['sobrenome']?></a></span>
                 </div>
             </li> 

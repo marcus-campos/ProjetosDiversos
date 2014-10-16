@@ -6,7 +6,7 @@
 
 		
 <!--Modal novo cadastro-->
-	<div class="modal fade" id="myModal-Cadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal fade" id="myModal-NovaConsulta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -25,21 +25,23 @@
 							<input type="text" name="txtassunto" class="form-control" required="required">
 						</div>
 					</div>
-                      <div class="form-group">
-						<label class="col-sm-3 control-label">Caminho Anexo</label>
+                    
+                     <div class="form-group">
+						<label class="col-sm-3 control-label">Caminho do Anexo</label>
 						<div class="col-sm-6">
-							<input type="text" name="txtanexo" class="form-control" required="required">
+							<input type="text" name="txtcaminho" class="form-control" required="required">
 						</div>
 					</div>
+                    
                     
                     <div class="form-group">
 						<label class="col-sm-3 control-label">Descricao</label>
 						<div class="col-sm-6">
-							<textarea name="descricao" class="form-control" required="required"></textarea>
+							<textarea name="descricao" class="form-control" required></textarea>
 						</div>
 					</div>
                     <div class="form-group">
-					<label class="col-sm-3 control-label">Pacotes</label>
+					<label class="col-sm-3 control-label">Prioridade</label>
 						<div class="col-sm-6">
 							<!-- COLOCAR AQUI O SELECT PARAR MOSTRAR AS COISAS -->
 						</div>
@@ -66,6 +68,51 @@
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
+    
+    <!--Modal novo cadastro-->
+	<div class="modal fade" id="myModal-ConsultasAprovar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Novo Cadastro</h4>
+				</div>
+				<div class="modal-body">
+                
+                	
+					    
+                	 <form action="#" class="form-horizontal row-border" method="post">
+                     
+                     <div class="form-group">
+						<label class="col-sm-3 control-label">Ação</label>
+						<div class="col-sm-6">
+							<textarea name="acao" class="form-control" required="required"></textarea>
+						</div>
+					</div>
+                    
+                     <div class="form-group">
+						<label class="col-sm-3 control-label">Fundamento</label>
+						<div class="col-sm-6">
+							<textarea name="fundamento" class="form-control" required="required"></textarea>
+						</div>
+					</div>
+					
+						<div class="col-sm-6">
+							<input type="hidden" value="" id="hue1" name="hue"> 
+						</div>
+					
+                    <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+					<button  class="btn btn-primary" name="cadastra" type="submit">Cadastrar</button>
+				</div>       
+                </form>				</div>
+				
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+    
+    
+  
 <div id="page-content">
     <div id='wrap'>
         <div id="page-heading">
@@ -170,7 +217,18 @@
 		?>        	
            <script>
 				$(function() {    				
-					$('#myModal-Cadastro').modal('toggle');
+					$('#myModal-NovaConsulta').modal('toggle');
+				});
+				
+            </script>
+        <?php
+	}
+	
+	 if(isset($_GET['cons1'])){
+		?>        	
+           <script>
+				$(function() {    				
+					$('#myModal-ConsultasAprovar').modal('toggle');
 				});
 				
             </script>
