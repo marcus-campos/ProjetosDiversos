@@ -6,6 +6,9 @@
   $tipo_pessoas_ctrl = new TipoPessoaController;
   $mysqlObj = new MySQLDB();
   $tipo_pessoas = $tipo_pessoas_ctrl->listar();
+
+  $empresas_ctrl = new PessoaController;
+  $empresas = $empresas_ctrl->listar_empresas();
   $breadcumb = [URL . 'lista-pessoas.php' => 'Pessoas', URL . 'cadastro-pessoas.php' => 'Cadastro'];
 ?>
 
@@ -102,6 +105,18 @@
                   <select name="tipo_pessoa_idtipo_pessoa" id="fd_tipo_pessoa_idtipo_pessoa" class="form-control">
                     <?php while($row = $mysqlObj->fetch_array($tipo_pessoas)):?>
                       <option value="<?=$row['idtipo_pessoa']?>"><?=$row['titulo']?></option>
+                    <?php endwhile;?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="fd_pessoas_idpessoa" class="col-sm-3 control-label">Empresa</label>
+                <div class="col-sm-6">
+                  <select name="pessoas_idpessoa" id="fd_pessoas_idpessoa" class="form-control">
+                    <option value="" selected>Não pertence a uma empresa</option>
+                    <?php while($row = $mysqlObj->fetch_array($empresas)):?>
+                      <option value="<?=$row['idpessoa']?>"><?=$row['nome']?></option>
                     <?php endwhile;?>
                   </select>
                 </div>
