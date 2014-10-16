@@ -18,9 +18,9 @@
 		
 		$data1 = $_SESSION['ultima_acao'];
 		$data2 = date("Y-m-d H:i:s");
-		$dash = $_SESSION['dashboard'].".php";
 		
-		header("Location: ../app/$dash");
+		$dash = $_SESSION['dashboard'].".php";
+		header("Location: ../app/$dash");		
 	
 		if($data1 > $data2)
 		{
@@ -233,6 +233,12 @@
                     <ul class="acc-menu">
                         <li><a href="cadastro-pessoas.php">Cadastro</a></li>
                         <li><a href="lista-pessoas.php">Todos</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Empresa</span></a>
+                    <ul class="acc-menu">
+                        <li><a href="cadastro-empresas.php">Cadastro</a></li>
+                        <li><a href="lista-empresas.php">Todos</a></li>
                     </ul>
                 </li>
                 <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Tipos de Pessoas</span></a>

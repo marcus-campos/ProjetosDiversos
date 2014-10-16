@@ -1,4 +1,6 @@
-<?php include "header.php";?>
+<?php 
+	include "header.php";	
+?>
 <div id="page-content">
     <div id='wrap'>
         <div id="page-heading">
