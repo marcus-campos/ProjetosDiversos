@@ -1,8 +1,49 @@
 <?php 
 	include "header.php";
 	require_once '../controller/consulta/ConsultaController.php';
-	$consulta = new ConsultaController();
-?>
+	$consulta = new ConsultaController();	
+?> 
+
+		
+<!--Modal novo cadastro-->
+	<div class="modal fade" id="myModal-Cadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Novo Cadastro</h4>
+				</div>
+				<div class="modal-body">
+					    
+                	 <form action="#" class="form-horizontal row-border" method="post">
+                    <div class="form-group">
+					<label class="col-sm-3 control-label">Pacotes</label>
+						<div class="col-sm-6">
+							<!-- COLOCAR AQUI O SELECT PARAR MOSTRAR AS COISAS -->
+						</div>
+					</div>
+                    
+                    <div class="form-group">
+					<label class="col-sm-3 control-label">Coordenador</label>
+						<div class="col-sm-6">
+							<!-- COLOCAR AQUI O SELECT PARAR MOSTRAR AS COISAS -->
+						</div>
+					</div>
+                      
+					
+						<div class="col-sm-6">
+							<input type="hidden" value="" id="hue1" name="hue"> 
+						</div>
+					
+                    <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+					<button  class="btn btn-primary" name="cadastra" type="submit">Cadastrar</button>
+				</div>       
+                </form>				</div>
+				
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 <div id="page-content">
     <div id='wrap'>
         <div id="page-heading">
@@ -12,8 +53,6 @@
 
             <h1>Dashboard</h1>            
         </div>
-
-
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -64,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-            </div>               
+            </div>              
                 <div class="col-md-6">
                     <div class="panel panel-midnightblue">
                         <div class="panel-heading">
@@ -82,11 +121,13 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="nvc">
                                     <ul class="panel-threads">
-                                     	<?=$consulta->loadConsultasADefinir()?>
+                                     	
+                                        <?=$consulta->loadConsultasADefinir()?>
                                         <a href="#" class="btn btn-default-alt btn-sm pull-right">Carregar mais</a>
                                      </ul>
                                 </div>
                                 <div class="tab-pane" id="cpa">
+                                
                                     <ul class="panel-users">
                                        <?=$consulta->loadConsultasAAprovar()?>
 									</ul>
@@ -95,121 +136,22 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!--Modal nova consulta-->
-                    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">Nova consulta</h4>
-                                </div>
-                                <div class="modal-body">
-                                        
-                                    <form action="" class="form-horizontal row-border">
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Assunto</label>
-                                            <label class="col-sm-3 control-label">Natureza</label>                                                                                  
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Natureza</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-sm-3"><p class="help-block">Ex: Vinicius Campos</p></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">RG</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control mask" data-inputmask="'mask': 'AA 99.999.999'">
-                                            </div>
-                                        <div class="col-sm-3"><p class="help-block">Ex: MG 12.345.678</p></div>
-                                        </div>  
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">CPF</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control mask" data-inputmask="'mask': '999-999-999-99'">
-                                            </div>
-                                            <div class="col-sm-3"><p class="help-block">Ex: 123.456.789-90</p></div>
-                                        </div>           
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Telefone</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control mask" data-inputmask="'mask':'(999) 9999-9999'">
-                                            </div>
-                                            <div class="col-sm-3"><p class="help-block">Ex (031) 9999-9999</p></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Celular</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control mask" data-inputmask="'mask':'(999) 9999-9999'"></div>
-                                            <div class="col-sm-3"><p class="help-block">Ex (031) 9999-9999</p></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Data de nascimento</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control mask" data-inputmask="'alias': 'date'">
-                                            </div>
-                                            <div class="col-sm-3"><p class="help-block">Ex: 23/04/1995</p></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Logradouro</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="col-sm-3"><p class="help-block">Ex: Rua ABC</p></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Numero</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="col-sm-3"><p class="help-block">Ex: 210</p></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Complemento</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="col-sm-3"><p class="help-block">Ex: Apto 202</p></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Bairro</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="col-sm-3"><p class="help-block">Ex: Limoeiro</p></div>
-                                        </div>
-                                        <div class="form-group">
-                                        <label class="col-sm-3 control-label">Estado</label>
-                                            <div class="col-sm-6">
-                                                <?php $estados->listar(); ?>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                        <label class="col-sm-3 control-label">Cidade</label>
-                                            <div class="col-sm-6">
-                                                <span id="sbox_cidades">
-                                                    <select class="form-control" id="source">
-                                                            <option value=''>---------------------</option>
-                                                    </select>
-                                               </span>	
-                                            </div>
-                                        </div>                       
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div><!-- /.modal -->
                 </div>
             </div>
-
         </div> <!-- container -->
     </div> <!--wrap -->
 </div> <!-- page-content -->
-
-<?php include "footer.php" ?>
+<?php
+	 include "footer.php";
+	 
+	 if(isset($_GET['cons'])){
+		?>        	
+           <script>
+				$(function() {    				
+					$('#myModal-Cadastro').modal('toggle');
+				});
+				
+            </script>
+        <?php
+	}
+ ?>
