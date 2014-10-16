@@ -48,7 +48,7 @@
       $pessoa->setTipoPessoaIdtipoPessoa($_POST['tipo_pessoa_idtipo_pessoa']);
 
       if($_POST['pessoas_idpessoa']){
-        $empresa->setPessoaIdpessoa($_POST['pessoas_idpessoa']);
+        $pessoa->setPessoaIdpessoa($_POST['pessoas_idpessoa']);
       }
 
       return $pessoa->save();

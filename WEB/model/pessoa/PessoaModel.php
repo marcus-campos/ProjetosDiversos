@@ -148,8 +148,13 @@
       $cnpj = $this->getCnpj();
       $data_nasc = $this->getDataNasc();
       $tipo_pessoa_idtipo_pessoa = $this->getTipoPessoaIdtipoPessoa();
+      if(!$this->getPessoaIdpessoa()){
+      	$pessoas_idpessoa = 'NULL';
+      }else{
+      	$pessoas_idpessoa = $this->getPessoaIdpessoa();
+      }
 
-			$sql = "INSERT INTO pessoas(nome, sobrenome, telefone, celular, rg, cpf, cnpj, data_nasc,ultimo_update, status, tipo_pessoa_idtipo_pessoa) VALUES('$nome', '$sobrenome', '$telefone', '$celular', '$rg', '$cpf', '$cnpj', '$data_nasc', sysdate(), '1', $tipo_pessoa_idtipo_pessoa)";
+			$sql = "INSERT INTO pessoas(nome, sobrenome, telefone, celular, rg, cpf, cnpj, data_nasc,ultimo_update, status, tipo_pessoa_idtipo_pessoa, pessoas_idpessoa) VALUES('$nome', '$sobrenome', '$telefone', '$celular', '$rg', '$cpf', '$cnpj', '$data_nasc', sysdate(), '1', $tipo_pessoa_idtipo_pessoa, $pessoas_idpessoa)";
 			$mysqlObj->query($sql);
 			$id = $mysqlObj->last_id();
 			return $id;
@@ -165,7 +170,13 @@
       $cnpj = $this->getCnpj();
       $tipo_pessoa_idtipo_pessoa = $this->getTipoPessoaIdtipoPessoa();
 
-			$sql = "INSERT INTO pessoas(nome, sobrenome, telefone, celular, cnpj,ultimo_update, status, tipo_pessoa_idtipo_pessoa) VALUES('$nome', '$sobrenome', '$telefone', '$celular', '$cnpj', sysdate(), '1', $tipo_pessoa_idtipo_pessoa)";
+      if(!$this->getPessoaIdpessoa()){
+      	$pessoas_idpessoa = 'NULL';
+      }else{
+      	$pessoas_idpessoa = $this->getPessoaIdpessoa();
+      }
+
+			$sql = "INSERT INTO pessoas(nome, sobrenome, telefone, celular, cnpj,ultimo_update, status, tipo_pessoa_idtipo_pessoa, pessoas_idpessoa) VALUES('$nome', '$sobrenome', '$telefone', '$celular', '$cnpj', sysdate(), '1', $tipo_pessoa_idtipo_pessoa, $pessoas_idpessoa)";
 			$mysqlObj->query($sql);
 			$id = $mysqlObj->last_id();
 			return $id;
