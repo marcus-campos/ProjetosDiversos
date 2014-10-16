@@ -229,54 +229,60 @@
                 </li>
                 <li class="divider"></li>
                 <li><a href="index.php"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-                <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Pessoas</span></a>
+                
+               	<li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Cadastros</span></a>
+                    <ul class="acc-menu">
+                        <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Pessoas</span></a>
                     <ul class="acc-menu">
                         <li><a href="cadastro-pessoas.php">Cadastro</a></li>
                         <li><a href="lista-pessoas.php">Todos</a></li>
                     </ul>
-                </li>
-                <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Empresa</span></a>
-                    <ul class="acc-menu">
-                        <li><a href="cadastro-empresas.php">Cadastro</a></li>
-                        <li><a href="lista-empresas.php">Todos</a></li>
+                	</li>
+                    <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Empresa</span></a>
+                        <ul class="acc-menu">
+                            <li><a href="cadastro-empresas.php">Cadastro</a></li>
+                            <li><a href="lista-empresas.php">Todos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Tipos de Pessoas</span></a>
+                        <ul class="acc-menu">
+                            <li><a href="cadastro-tipo-pessoa.php">Cadastro</a></li>
+                            <li><a href="lista-tipo-pessoa.php">Todos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Usuários</span></a>
+                        <ul class="acc-menu">
+                            <li><a href="cadastro-usuarios.php">Cadastro</a></li>
+                            <li><a href="lista-usuarios.php">Todos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Prioridade de consultas</span></a>
+                        <ul class="acc-menu">
+                            <li><a href="cadastro-prioridade-consulta.php">Cadastro</a></li>
+                            <li><a href="lista-prioridade-consulta.php">Todos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Natureza das consultas</span></a>
+                        <ul class="acc-menu">
+                            <li><a href="cadastro-natureza-consulta.php">Cadastro</a></li>
+                            <li><a href="lista-natureza-consulta.php">Todos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Respostas das consultas</span></a>
+                        <ul class="acc-menu">
+                            <li><a href="cadastro-resposta-consulta.php">Cadastro</a></li>
+                            <li><a href="lista-resposta-consulta.php">Todos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Consulta</span></a>
+                        <ul class="acc-menu">
+                            <li><a href="cadastro-usuarios.php">Cadastro</a></li>
+                            <li><a href="lista-usuarios.php">Todos</a></li>
+                        </ul>
+                    </li>
                     </ul>
                 </li>
-                <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Tipos de Pessoas</span></a>
-                    <ul class="acc-menu">
-                        <li><a href="cadastro-tipo-pessoa.php">Cadastro</a></li>
-                        <li><a href="lista-tipo-pessoa.php">Todos</a></li>
-                    </ul>
-                </li>
-                <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Usuários</span></a>
-                    <ul class="acc-menu">
-                        <li><a href="cadastro-usuarios.php">Cadastro</a></li>
-                        <li><a href="lista-usuarios.php">Todos</a></li>
-                    </ul>
-                </li>
-                <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Prioridade de consultas</span></a>
-                    <ul class="acc-menu">
-                        <li><a href="cadastro-prioridade-consulta.php">Cadastro</a></li>
-                        <li><a href="lista-prioridade-consulta.php">Todos</a></li>
-                    </ul>
-                </li>
-                <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Natureza das consultas</span></a>
-                    <ul class="acc-menu">
-                        <li><a href="cadastro-natureza-consulta.php">Cadastro</a></li>
-                        <li><a href="lista-natureza-consulta.php">Todos</a></li>
-                    </ul>
-                </li>
-                <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Respostas das consultas</span></a>
-                    <ul class="acc-menu">
-                        <li><a href="cadastro-resposta-consulta.php">Cadastro</a></li>
-                        <li><a href="lista-resposta-consulta.php">Todos</a></li>
-                    </ul>
-                </li>
-                <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Consulta</span></a>
-                    <ul class="acc-menu">
-                        <li><a href="cadastro-usuarios.php">Cadastro</a></li>
-                        <li><a href="lista-usuarios.php">Todos</a></li>
-                    </ul>
-                </li>
+                
             </ul>
             <!-- END SIDEBAR MENU -->
         </nav>
