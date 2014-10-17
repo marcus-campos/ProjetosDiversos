@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 	include "header.php";
 	require_once '../controller/consulta/ConsultaController.php';
 	$consulta = new ConsultaController();	
@@ -7,6 +7,77 @@
 		
 <!--Modal novo cadastro-->
 	<div class="modal fade" id="myModal-NovaConsulta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Novo Cadastro</h4>
+				</div>
+				<div class="modal-body">
+                
+                	
+					    
+			<div class="row">
+				<div class="col-md-12">
+				
+					<ul class="timeline">
+						<li class="timeline-orange">
+							<div class="timeline-icon"><i class="fa fa-pencil"></i></div>
+							<div class="timeline-body">
+								<div class="timeline-header">
+									<span class="author">Posted by <a href="#">David Tennant</a></span>
+									<span class="date">Monday, November 11, 2013</span>
+								</div>
+								<div class="timeline-content">
+									<h3>Lorem Ipsum Dolor Sit Amet</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, officiis, molestiae, deserunt asperiores architecto ut vel repudiandae dolore inventore nesciunt necessitatibus doloribus ratione facere consectetur suscipit! Quasi, officia, veniam mollitia recusandae iure aperiam totam culpa aut nobis eveniet porro laborum quisquam non.</p>
+								</div>
+                                <div>
+                                <hr>
+                                Anexos:
+                                </div>
+							</div>
+						</li>
+                        <li class="timeline-green">
+							<div class="timeline-icon"><i class="fa fa-pencil"></i></div>
+							<div class="timeline-body">
+								<div class="timeline-header">
+									<span class="author">Posted by <a href="#">David Tennant</a></span>
+									<span class="date">Monday, November 11, 2013</span>
+								</div>
+								<div class="timeline-content">
+									<h3>Lorem Ipsum Dolor Sit Amet</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, officiis, molestiae, deserunt asperiores architecto ut vel repudiandae dolore inventore nesciunt necessitatibus doloribus ratione facere consectetur suscipit! Quasi, officia, veniam mollitia recusandae iure aperiam totam culpa aut nobis eveniet porro laborum quisquam non.</p>
+								</div>
+                                <div>
+                                 <hr>
+                                Anexos:
+                                </div>
+							</div>
+						</li>
+					</ul>
+				</div>
+                </div>
+          
+                      
+					
+                            <div class="col-sm-6">
+                                <input type="hidden" value="" id="hue1" name="hue"> 
+                            </div>
+                        
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-success">Mais Informações</button>
+                        <button  class="btn btn-primary" name="cadastra" type="submit">Cadastrar</button>
+                    </div>       
+                    </form>				
+              	</div>
+				
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+  <!--Modal novo cadastro-->
+	<div class="modal fade" id="myModal-ConsultasAprovar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -88,64 +159,14 @@
             <h1>Dashboard</h1>            
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-primary">
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-md-12 clearfix">
-                                    <h4 class="pull-left" style="margin:0 0 10px">Relatorio parcial</h4>
-                                    <div class="pull-right">
-                                        <a href="javascript:;" class="btn btn-default-alt btn-sm"><i class="fa fa-refresh"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-2">
-                                    <div id="" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
-                                    <h3 style="text-align: center; margin: 0; color: #808080;">98</h3>
-                                    <p style="text-align: center; margin: 0;">Total de consultas</p>
-                                    <hr class="hidden-md hidden-lg">
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-2">
-                                    <div id="" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
-                                    <h3 style="text-align: center; margin: 0; color: #808080;">22</h3>
-                                    <p style="text-align: center; margin: 0;">Total de consultas (Hoje)</p>
-                                    <hr class="hidden-md hidden-lg">
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-2">
-                                    <div id="" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
-                                    <h3 style="text-align: center; margin: 0; color: #808080;">6.92</h3>
-                                    <p style="text-align: center; margin: 0;">Média de consultas diárias</p>
-                                    <hr class="hidden-md hidden-lg">
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-2">
-                                    <div id="indexavgvisit" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
-                                    <h3 style="text-align: center; margin: 0; color: #808080;">00:04:17</h3>
-                                    <p style="text-align: center; margin: 0;">Média de tempo para resposta</p>
-                                    <hr class="hidden-md hidden-lg">
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-2">
-                                    <div id="indexnewvisits" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
-                                    <h3 style="text-align: center; margin: 0; color: #808080;">35</h3>
-                                    <p style="text-align: center; margin: 0;">Consultas em aberto</p>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-2">
-                                    <div id="indexbouncerate" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
-                                    <h3 style="text-align: center; margin: 0; color: #808080;">NULL</h3>
-                                    <p style="text-align: center; margin: 0;">Consultas conlcuidas</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>              
-  
-                                  <div class="col-md-6">
+               
+                <div class="col-md-6">
                     <div class="panel panel-midnightblue">
                         <div class="panel-heading">
                               <h4>
                                 <ul class="nav nav-tabs">
                                   <li class="active"><a href="#nvc" data-toggle="tab"><i class="fa fa-list visible-xs icon-scale"></i><span class="hidden-xs">Novas consultas</span></a></li>
-<!--                                  <li><a href="#cpa" data-toggle="tab"><i class="fa fa-comments visible-xs icon-scale"></i><span class="hidden-xs">Consultas para aprovar</span></a></li>-->                                </ul>
+                                  <li><a href="#cpa" data-toggle="tab"><i class="fa fa-comments visible-xs icon-scale"></i><span class="hidden-xs">Colaborador</span></a></li>                                </ul>
                               </h4>
                               <!-- <div class="options">
                                 <a href="javascript:;"><i class="fa fa-cog"></i></a>
@@ -173,12 +194,13 @@
                     </div>
                 </div>
             </div>
-            </div>
         </div> <!-- container -->
     </div> <!--wrap -->
 </div> <!-- page-content -->
-<?php include "footer.php";
- if(isset($_GET['cons'])){
+<?php
+	 include "footer.php";
+	 
+	 if(isset($_GET['cons'])){
 		?>        	
            <script>
 				$(function() {    				
@@ -199,6 +221,4 @@
             </script>
         <?php
 	}
-
-
  ?>

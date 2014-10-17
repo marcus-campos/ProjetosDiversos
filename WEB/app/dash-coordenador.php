@@ -17,59 +17,66 @@
                 
                 	
 					    
-                	 <form action="#" class="form-horizontal row-border" method="post">
-                     
-                     <div class="form-group">
-						<label class="col-sm-3 control-label">Assunto</label>
-						<div class="col-sm-6">
-							<input type="text" name="txtassunto" class="form-control" required="required">
-						</div>
-					</div>
-                    
-                     <div class="form-group">
-						<label class="col-sm-3 control-label">Caminho do Anexo</label>
-						<div class="col-sm-6">
-							<input type="text" name="txtcaminho" class="form-control" required="required">
-						</div>
-					</div>
-                    
-                    
-                    <div class="form-group">
-						<label class="col-sm-3 control-label">Descricao</label>
-						<div class="col-sm-6">
-							<textarea name="descricao" class="form-control" required></textarea>
-						</div>
-					</div>
-                    <div class="form-group">
-					<label class="col-sm-3 control-label">Prioridade</label>
-						<div class="col-sm-6">
-							<!-- COLOCAR AQUI O SELECT PARAR MOSTRAR AS COISAS -->
-						</div>
-					</div>
-                    
-                    <div class="form-group">
-					<label class="col-sm-3 control-label">Coordenador</label>
-						<div class="col-sm-6">
-							<!-- COLOCAR AQUI O SELECT PARAR MOSTRAR AS COISAS -->
-						</div>
-					</div>
+			<div class="row">
+				<div class="col-md-12">
+				
+					<ul class="timeline">
+						<li class="timeline-orange">
+							<div class="timeline-icon"><i class="fa fa-pencil"></i></div>
+							<div class="timeline-body">
+								<div class="timeline-header">
+									<span class="author">Posted by <a href="#">David Tennant</a></span>
+									<span class="date">Monday, November 11, 2013</span>
+								</div>
+								<div class="timeline-content">
+									<h3>Lorem Ipsum Dolor Sit Amet</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, officiis, molestiae, deserunt asperiores architecto ut vel repudiandae dolore inventore nesciunt necessitatibus doloribus ratione facere consectetur suscipit! Quasi, officia, veniam mollitia recusandae iure aperiam totam culpa aut nobis eveniet porro laborum quisquam non.</p>
+								</div>
+                                <div>
+                                <hr>
+                                Anexos:
+                                </div>
+							</div>
+						</li>
+                        <li class="timeline-green">
+							<div class="timeline-icon"><i class="fa fa-pencil"></i></div>
+							<div class="timeline-body">
+								<div class="timeline-header">
+									<span class="author">Posted by <a href="#">David Tennant</a></span>
+									<span class="date">Monday, November 11, 2013</span>
+								</div>
+								<div class="timeline-content">
+									<h3>Lorem Ipsum Dolor Sit Amet</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, officiis, molestiae, deserunt asperiores architecto ut vel repudiandae dolore inventore nesciunt necessitatibus doloribus ratione facere consectetur suscipit! Quasi, officia, veniam mollitia recusandae iure aperiam totam culpa aut nobis eveniet porro laborum quisquam non.</p>
+								</div>
+                                <div>
+                                 <hr>
+                                Anexos:
+                                </div>
+							</div>
+						</li>
+					</ul>
+				</div>
+                </div>
+          
                       
 					
-						<div class="col-sm-6">
-							<input type="hidden" value="" id="hue1" name="hue"> 
-						</div>
-					
-                    <div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-					<button  class="btn btn-primary" name="cadastra" type="submit">Cadastrar</button>
-				</div>       
-                </form>				</div>
+                            <div class="col-sm-6">
+                                <input type="hidden" value="" id="hue1" name="hue"> 
+                            </div>
+                        
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-success">Mais Informações</button>
+                        <button  class="btn btn-primary" name="cadastra" type="submit">Cadastrar</button>
+                    </div>       
+                    </form>				
+              	</div>
 				
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-    
-    <!--Modal novo cadastro-->
+  <!--Modal novo cadastro-->
 	<div class="modal fade" id="myModal-ConsultasAprovar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -81,36 +88,65 @@
                 
                 	
 					    
-                	 <form action="#" class="form-horizontal row-border" method="post">
-                     
-                     <div class="form-group">
-						<label class="col-sm-3 control-label">Ação</label>
-						<div class="col-sm-6">
-							<textarea name="acao" class="form-control" required="required"></textarea>
-						</div>
-					</div>
-                    
-                     <div class="form-group">
-						<label class="col-sm-3 control-label">Fundamento</label>
-						<div class="col-sm-6">
-							<textarea name="fundamento" class="form-control" required="required"></textarea>
-						</div>
-					</div>
+			<div class="row">
+				<div class="col-md-12">
+				
+					<ul class="timeline">
+						<li class="timeline-orange">
+							<div class="timeline-icon"><i class="fa fa-pencil"></i></div>
+							<div class="timeline-body">
+								<div class="timeline-header">
+									<span class="author">Posted by <a href="#">David Tennant</a></span>
+									<span class="date">Monday, November 11, 2013</span>
+								</div>
+								<div class="timeline-content">
+									<h3>Lorem Ipsum Dolor Sit Amet</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, officiis, molestiae, deserunt asperiores architecto ut vel repudiandae dolore inventore nesciunt necessitatibus doloribus ratione facere consectetur suscipit! Quasi, officia, veniam mollitia recusandae iure aperiam totam culpa aut nobis eveniet porro laborum quisquam non.</p>
+								</div>
+                                <div>
+                                <hr>
+                                Anexos:
+                                </div>
+							</div>
+						</li>
+                        <li class="timeline-green">
+							<div class="timeline-icon"><i class="fa fa-pencil"></i></div>
+							<div class="timeline-body">
+								<div class="timeline-header">
+									<span class="author">Posted by <a href="#">David Tennant</a></span>
+									<span class="date">Monday, November 11, 2013</span>
+								</div>
+								<div class="timeline-content">
+									<h3>Lorem Ipsum Dolor Sit Amet</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, officiis, molestiae, deserunt asperiores architecto ut vel repudiandae dolore inventore nesciunt necessitatibus doloribus ratione facere consectetur suscipit! Quasi, officia, veniam mollitia recusandae iure aperiam totam culpa aut nobis eveniet porro laborum quisquam non.</p>
+								</div>
+                                <div>
+                                 <hr>
+                                Anexos:
+                                </div>
+							</div>
+						</li>
+					</ul>
+				</div>
+                </div>
+          
+                      
 					
-						<div class="col-sm-6">
-							<input type="hidden" value="" id="hue1" name="hue"> 
-						</div>
-					
-                    <div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-					<button  class="btn btn-primary" name="cadastra" type="submit">Cadastrar</button>
-				</div>       
-                </form>				</div>
+                            <div class="col-sm-6">
+                                <input type="hidden" value="" id="hue1" name="hue"> 
+                            </div>
+                        
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-success">Mais Informações</button>
+                        <button  class="btn btn-primary" name="cadastra" type="submit">Cadastrar</button>
+                    </div>       
+                    </form>				
+              	</div>
 				
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-    
     
   
 <div id="page-content">
